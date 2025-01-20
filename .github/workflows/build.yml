@@ -19,7 +19,6 @@ jobs:
           wget https://github.com/brain-hackers/cegcc-build/releases/download/2022-10-26-225811/cegcc-aarch64-2022-10-26-225811.zip
           sudo mkdir -p /opt
           sudo unzip cegcc-aarch64-2022-10-26-225811.zip -d /opt
-          sudo mv /opt/cegcc-aarch64-2022-10-26-225811 /opt/cegcc
       - name: Setup Environment
         run: |
           echo 'export PATH="$PATH:/opt/cegcc/bin"' >> ~/.profile
