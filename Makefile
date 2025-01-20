@@ -1,4 +1,4 @@
-CC = arm-mingw32ce-gcc
+CC = arm-mingw32ce-g++ 
 CFLAGS = -Wall
 
 all: hello.exe
