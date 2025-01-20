@@ -18,8 +18,12 @@ extern "C" DLL_EXPORT void run_exe(const char* path) {
     si.cb = sizeof(si);
     ZeroMemory(&pi, sizeof(pi));
 
-    if (!CreateProcess(
-            path,      // 実行するEXEのパス
+    // char* を wchar_t* に変換
+    wchar_t wPath[MAX_PATH];
+    MultiByteToWideChar(CP_ACP, 0, path, -1, wPath, MAX_PATH);
+
+    if (!CreateProcessW(
+            wPath,     // 実行するEXEのパス（wchar_t型）
             NULL,      // コマンドライン引数
             NULL,      // セキュリティ属性
             NULL,      // スレッドセキュリティ属性
