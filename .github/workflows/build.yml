@@ -19,6 +19,5 @@ jobs:
 
       - name: Build with cegcc
         run: |
-          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace \
-          ghcr.io/enlyze/ghcr-windows-ce-build-environment:latest \
+          docker pull brainhackers/gen1_builder
           make
