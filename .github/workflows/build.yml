@@ -26,4 +26,6 @@ jobs:
           echo "PATH is now: $PATH"
           which arm-mingw32ce-gcc # arm-mingw32ce-gcc の存在確認
       - name: Build Windows CE Application
-        run: make
+        run: |
+          source ~/.profile
+          make
