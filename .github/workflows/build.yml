@@ -20,4 +20,6 @@ jobs:
       - name: Build with cegcc
         run: |
           docker pull brainhackers/gen1_builder
-          make
+      - name: Build Windows CE Application
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace brainhackers/gen1_builder make
