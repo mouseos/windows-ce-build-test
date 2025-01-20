@@ -1,0 +1,24 @@
+name: Build Windows CE Application
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Windows CE Build Environment
+        uses: docker/setup-buildx-action@v2
+
+      - name: Build with cegcc
+        run: |
+          docker run --rm -v ${{ github.workspace }}:/workspace -w /workspace \
+          ghcr.io/enlyze/ghcr-windows-ce-build-environment:latest \
+          make
