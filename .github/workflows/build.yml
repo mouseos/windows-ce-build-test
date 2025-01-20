@@ -16,9 +16,9 @@ jobs:
 
       - name: Download cegcc Toolchain
         run: |
-          wget https://github.com/brain-hackers/cegcc-build/releases/download/2022-10-26-225811/cegcc-aarch64-2022-10-26-225811.zip
+          wget https://github.com/brain-hackers/cegcc-build/releases/download/2022-10-26-225811/cegcc-x86_64-2022-10-26-225811.zip
           sudo mkdir -p /opt
-          sudo unzip cegcc-aarch64-2022-10-26-225811.zip -d /opt
+          sudo unzip cegcc-x86_64-2022-10-26-225811.zip -d /opt
       - name: Setup Environment
         run: |
           echo 'export PATH="$PATH:/opt/cegcc/bin"' >> ~/.profile
